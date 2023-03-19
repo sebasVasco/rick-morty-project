@@ -10,9 +10,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 
 import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
+import { NotFoundComponent } from './layout/pages/not-found/not-found.component';
 
 @NgModule({
-  declarations: [MainLayoutComponent],
+  declarations: [MainLayoutComponent, NotFoundComponent],
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
@@ -24,6 +25,6 @@ import { MainLayoutComponent } from './layout/main-layout/main-layout.component'
     MatToolbarModule,
     RouterModule,
   ],
-  exports: [MainLayoutComponent],
+  exports: [MainLayoutComponent, NotFoundComponent],
 })
 export class CoreModule {}
