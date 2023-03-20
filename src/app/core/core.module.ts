@@ -11,12 +11,14 @@ import { MatListModule } from '@angular/material/list';
 
 import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
 import { NotFoundComponent } from './layout/pages/not-found/not-found.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [MainLayoutComponent, NotFoundComponent],
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
+    HttpClientModule,
     LayoutModule,
     MatButtonModule,
     MatIconModule,
