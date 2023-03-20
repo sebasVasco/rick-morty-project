@@ -1,4 +1,4 @@
-import { CharacterSchema } from './character/character.schema';
+import { CharacterSchema } from './character.schema';
 
 export interface GETCharactersResponse {
   info: InfoResponse;
