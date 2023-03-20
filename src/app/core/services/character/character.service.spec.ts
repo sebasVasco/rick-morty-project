@@ -22,10 +22,16 @@ describe('CharacterService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should get characters', (done) => {
+  it('should get characters', () => {
     service.getCharacters(1).subscribe((res) => {
       expect(res).toBeTruthy();
-      done();
     });
+
+    const req = httpTestingController.expectOne({
+      method: 'GET',
+      url: 'character/?page=1',
+    });
+
+    req.flush({});
   });
 });
