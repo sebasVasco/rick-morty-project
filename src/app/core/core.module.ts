@@ -8,13 +8,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
 import { NotFoundComponent } from './layout/pages/not-found/not-found.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RoutingLoadingBarComponent } from './layout/components/routing-loading-bar/routing-loading-bar.component';
 
 @NgModule({
-  declarations: [MainLayoutComponent, NotFoundComponent],
+  declarations: [MainLayoutComponent, NotFoundComponent, RoutingLoadingBarComponent],
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
@@ -23,6 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatButtonModule,
     MatIconModule,
     MatListModule,
+    MatProgressBarModule,
     MatSidenavModule,
     MatToolbarModule,
     RouterModule,

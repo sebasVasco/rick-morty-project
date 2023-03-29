@@ -9,6 +9,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { MainLayoutComponent } from './main-layout.component';
+import { RoutingLoadingBarComponent } from '../components/routing-loading-bar/routing-loading-bar.component';
 
 describe('MainLayoutComponent', () => {
   let component: MainLayoutComponent;
@@ -16,7 +17,7 @@ describe('MainLayoutComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [MainLayoutComponent],
+      declarations: [MainLayoutComponent, RoutingLoadingBarComponent],
       imports: [
         NoopAnimationsModule,
         LayoutModule,
