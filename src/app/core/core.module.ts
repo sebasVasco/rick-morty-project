@@ -9,20 +9,28 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
 import { NotFoundComponent } from './layout/pages/not-found/not-found.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RoutingLoadingBarComponent } from './layout/components/routing-loading-bar/routing-loading-bar.component';
+import { FilterContainerComponent } from './layout/components/filter-container/filter-container.component';
 
 @NgModule({
-  declarations: [MainLayoutComponent, NotFoundComponent, RoutingLoadingBarComponent],
+  declarations: [
+    FilterContainerComponent,
+    MainLayoutComponent,
+    NotFoundComponent,
+    RoutingLoadingBarComponent,
+  ],
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
     HttpClientModule,
     LayoutModule,
     MatButtonModule,
+    MatExpansionModule,
     MatIconModule,
     MatListModule,
     MatProgressBarModule,
@@ -30,6 +38,6 @@ import { RoutingLoadingBarComponent } from './layout/components/routing-loading-
     MatToolbarModule,
     RouterModule,
   ],
-  exports: [MainLayoutComponent, NotFoundComponent],
+  exports: [FilterContainerComponent, MainLayoutComponent, NotFoundComponent],
 })
 export class CoreModule {}
