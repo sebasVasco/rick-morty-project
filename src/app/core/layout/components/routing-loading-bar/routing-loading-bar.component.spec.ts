@@ -1,12 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import {
-  ActivationStart,
-  NavigationEnd,
-  NavigationStart,
-  Router,
-  RouterEvent,
-} from '@angular/router';
+import { NavigationEnd, NavigationStart, Router, RouterEvent } from '@angular/router';
 import { ReplaySubject } from 'rxjs';
 import { RoutingLoadingBarComponent } from './routing-loading-bar.component';
 
