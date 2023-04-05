@@ -15,16 +15,10 @@ import { MainLayoutComponent } from './layout/main-layout/main-layout.component'
 import { NotFoundComponent } from './layout/pages/not-found/not-found.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RoutingLoadingBarComponent } from './layout/components/routing-loading-bar/routing-loading-bar.component';
-import { FilterContainerComponent } from './layout/components/filter-container/filter-container.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
-    FilterContainerComponent,
-    MainLayoutComponent,
-    NotFoundComponent,
-    RoutingLoadingBarComponent,
-  ],
+  declarations: [MainLayoutComponent, NotFoundComponent, RoutingLoadingBarComponent],
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
@@ -41,6 +35,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     RouterModule,
   ],
-  exports: [FilterContainerComponent, MainLayoutComponent, NotFoundComponent],
+  exports: [MainLayoutComponent, NotFoundComponent],
 })
 export class CoreModule {}
