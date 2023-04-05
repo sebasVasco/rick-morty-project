@@ -1,17 +1,15 @@
-<div class="searchbar-container">
-  <mat-form-field
-    appearance="outline"
-    class="search-w-full"
-    #searchInput
-  >
-    <mat-label>{{ label }}</mat-label>
-    <input
-      matInput
-      [placeholder]="placeholder"
-      [type]="type"
-      (input)="onInput($event.target)"
-      (blur)="onBlur()"
-    />
-    <mat-icon matSuffix>search</mat-icon>
-  </mat-form-field>
-</div>
+<mat-form-field
+  appearance="outline"
+  class="search-w-full"
+  #searchInput
+>
+  <mat-label>{{ label }}</mat-label>
+  <input
+    matInput
+    [placeholder]="placeholder"
+    [type]="type"
+    (input)="onInput($event.target)"
+    (blur)="onBlur()"
+  />
+  <mat-icon matSuffix>search</mat-icon>
+</mat-form-field>
