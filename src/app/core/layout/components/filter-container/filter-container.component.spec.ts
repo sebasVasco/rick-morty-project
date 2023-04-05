@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FilterContainerComponent } from './filter-container.component';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('FilterContainerComponent', () => {
   let component: FilterContainerComponent;
@@ -9,6 +11,7 @@ describe('FilterContainerComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [FilterContainerComponent],
+      imports: [BrowserAnimationsModule, MatExpansionModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(FilterContainerComponent);
