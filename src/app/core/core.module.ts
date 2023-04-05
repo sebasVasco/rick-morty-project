@@ -16,6 +16,7 @@ import { NotFoundComponent } from './layout/pages/not-found/not-found.component'
 import { HttpClientModule } from '@angular/common/http';
 import { RoutingLoadingBarComponent } from './layout/components/routing-loading-bar/routing-loading-bar.component';
 import { FilterContainerComponent } from './layout/components/filter-container/filter-container.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { FilterContainerComponent } from './layout/components/filter-container/f
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
+    FormsModule,
     HttpClientModule,
     LayoutModule,
     MatButtonModule,
@@ -36,6 +38,7 @@ import { FilterContainerComponent } from './layout/components/filter-container/f
     MatProgressBarModule,
     MatSidenavModule,
     MatToolbarModule,
+    ReactiveFormsModule,
     RouterModule,
   ],
   exports: [FilterContainerComponent, MainLayoutComponent, NotFoundComponent],
