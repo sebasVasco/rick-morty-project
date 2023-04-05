@@ -7,17 +7,20 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
+import { MatExpansionModule } from '@angular/material/expansion';
 
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { FilterContainerComponent } from './components/filter-container/filter-container.component';
 @NgModule({
-  declarations: [SearchBarComponent],
+  declarations: [FilterContainerComponent, SearchBarComponent],
   imports: [
     CommonModule,
     FormsModule,
     MatButtonModule,
     MatCardModule,
+    MatExpansionModule,
     MatFormFieldModule,
     MatGridListModule,
     MatIconModule,
@@ -26,9 +29,11 @@ import { MatIconModule } from '@angular/material/icon';
     RouterModule,
   ],
   exports: [
+    FilterContainerComponent,
     FormsModule,
     MatButtonModule,
     MatCardModule,
+    MatExpansionModule,
     MatFormFieldModule,
     MatGridListModule,
     MatIconModule,
