@@ -1,0 +1,14 @@
+.searchbar-container {
+  display: flex;
+  justify-content: center;
+}
+
+.search-w-full {
+  width: 100%;
+}
+
+@media (min-width: 475px) {
+  .search-w-full {
+    width: 70%;
+  }
+}
