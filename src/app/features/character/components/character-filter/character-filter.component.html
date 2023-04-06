@@ -1,0 +1,28 @@
+<div class="filter-layout">
+  <app-search-bar
+    [(ngModel)]="characterFilters.name"
+    (ngModelChange)="this.filterTextSubject$.next($event)"
+  ></app-search-bar>
+  <app-filter-container>
+    <div>
+      <p>Status</p>
+      <mat-chip-listbox
+        [ariaOrientation]="'vertical'"
+        (change)="changeChipOptionsFilters($event.value, 'status')"
+      >
+        <mat-chip-option value="alive">Alive</mat-chip-option>
+        <mat-chip-option value="dead">Dead</mat-chip-option>
+        <mat-chip-option value="unknown">Unknown</mat-chip-option>
+      </mat-chip-listbox>
+    </div>
+    <div>
+      <p>Gender</p>
+      <mat-chip-listbox (change)="changeChipOptionsFilters($event.value, 'gender')">
+        <mat-chip-option value="female">Female</mat-chip-option>
+        <mat-chip-option value="male">Male</mat-chip-option>
+        <mat-chip-option value="genderless">Genderless</mat-chip-option>
+        <mat-chip-option value="unknown">Unknown</mat-chip-option>
+      </mat-chip-listbox>
+    </div>
+  </app-filter-container>
+</div>
