@@ -1,6 +1,5 @@
-import { Component, Input, forwardRef, ViewChild } from '@angular/core';
+import { Component, Input, forwardRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { MatFormField } from '@angular/material/form-field';
 
 @Component({
   selector: 'app-search-bar',
@@ -18,7 +17,6 @@ export class SearchBarComponent implements ControlValueAccessor {
   @Input() placeholder = 'Search...';
   @Input() label = 'Search';
   @Input() type = 'text';
-  @ViewChild('searchInput') _searchInput!: MatFormField;
   searchArgument: string | number = '';
 
   onInput(target: EventTarget | null): void {
