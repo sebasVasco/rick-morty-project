@@ -57,4 +57,20 @@ describe('SearchBarComponent', () => {
     inputEl.dispatchEvent(event);
     expect(inputEl.value).toBe(testText);
   });
+
+  it('should write the value', () => {
+    const mockValue = 'test';
+    component.writeValue(mockValue);
+    expect(component.searchArgument).toEqual(mockValue);
+  });
+
+  it('should register the change', () => {
+    component.registerOnChange(mockFn.onChange);
+    expect(component._onChange).toEqual(mockFn.onChange);
+  });
+
+  it('should register the touch', () => {
+    component.registerOnTouched(mockFn.onChange);
+    expect(component._onChange).toEqual(mockFn.onChange);
+  });
 });
