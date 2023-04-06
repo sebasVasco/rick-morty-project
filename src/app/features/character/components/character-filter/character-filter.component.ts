@@ -1,7 +1,8 @@
-import { Component, OnInit, OnDestroy, Output, EventEmitter, HostBinding } from '@angular/core';
-import { Subject, Subscription } from 'rxjs';
+import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
-import { CharacterFilters, CharacterGenders, CharacterStatus } from './character-filter.model';
+import { CharacterFilters } from './character-filter.model';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-character-filter',
@@ -10,41 +11,33 @@ import { CharacterFilters, CharacterGenders, CharacterStatus } from './character
 })
 export class CharacterFilterComponent implements OnInit, OnDestroy {
   @Output() readonly getFilters = new EventEmitter<CharacterFilters>();
-  @HostBinding('class.search-bar-w') width = true;
-  filterTextSubject$ = new Subject<string | number>();
   filterTextSubscription$!: Subscription;
-  characterFilters: CharacterFilters = {
+  characterFilters = this.fb.group<CharacterFilters>({
     name: '',
     status: null,
     gender: null,
-  };
+  });
   debounceValue = 1000;
+
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.debounceFilters();
   }
 
   debounceFilters(): void {
-    this.filterTextSubscription$ = this.filterTextSubject$
+    this.filterTextSubscription$ = this.characterFilters.valueChanges
       .pipe(debounceTime(this.debounceValue), distinctUntilChanged())
-      .subscribe(() => this.getFilters.emit(this.characterFilters));
-  }
-
-  changeChipOptionsFilters(
-    value: CharacterStatus | CharacterGenders,
-    prop: 'status' | 'gender'
-  ): void {
-    this.characterFilters = { ...this.characterFilters, [prop]: value };
-    this.getFilters.emit(this.characterFilters);
+      .subscribe(() => this.getFilters.emit(this.characterFilters.value));
   }
 
   clearFilters(): void {
-    this.characterFilters = {
+    this.characterFilters.reset({
       name: '',
       status: null,
       gender: null,
-    };
-    this.getFilters.emit(this.characterFilters);
+    });
+    this.getFilters.emit(this.characterFilters.value);
   }
 
   ngOnDestroy(): void {

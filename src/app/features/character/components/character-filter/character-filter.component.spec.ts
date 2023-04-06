@@ -3,8 +3,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CharacterFilterComponent } from './character-filter.component';
 import { SharedModule } from '@app/shared/shared.module';
-import { By } from '@angular/platform-browser';
-import { CharacterFilters } from './character-filter.model';
 
 describe('CharacterFilterComponent', () => {
   let component: CharacterFilterComponent;
@@ -32,16 +30,6 @@ describe('CharacterFilterComponent', () => {
     expect(component.debounceFilters).toHaveBeenCalled();
   });
 
-  it('should change chip options', () => {
-    const mockFilters: CharacterFilters = {
-      name: '',
-      status: 'alive',
-      gender: null,
-    };
-    component.changeChipOptionsFilters('alive', 'status');
-    expect(component.characterFilters).toEqual(mockFilters);
-  });
-
   it('should clear filters', () => {
     const resetFilters = {
       name: '',
@@ -49,6 +37,6 @@ describe('CharacterFilterComponent', () => {
       gender: null,
     };
     component.clearFilters();
-    expect(component.characterFilters).toEqual(resetFilters);
+    expect(component.characterFilters.value).toEqual(resetFilters);
   });
 });
