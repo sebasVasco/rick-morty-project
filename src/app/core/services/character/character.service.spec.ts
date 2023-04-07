@@ -34,4 +34,22 @@ describe('CharacterService', () => {
 
     req.flush({});
   });
+
+  it('should get characters with filters', () => {
+    const filters = {
+      name: 'test',
+      status: 'test',
+      gender: 'test',
+    };
+    service.getCharacters(1, filters).subscribe((res) => {
+      expect(res).toBeTruthy();
+    });
+
+    const req = httpTestingController.expectOne({
+      method: 'GET',
+      url: 'character/?page=1',
+    });
+
+    req.flush({});
+  });
 });
