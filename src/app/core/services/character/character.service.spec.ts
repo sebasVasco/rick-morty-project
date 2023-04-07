@@ -47,7 +47,7 @@ describe('CharacterService', () => {
 
     const req = httpTestingController.expectOne({
       method: 'GET',
-      url: 'character/?page=1',
+      url: 'character/?page=1&name=test&status=test&gender=test',
     });
 
     req.flush({});
