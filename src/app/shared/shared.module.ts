@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { FilterContainerComponent } from './components/filter-container/filter-container.component';
@@ -27,6 +28,7 @@ import { FilterContainerComponent } from './components/filter-container/filter-c
     MatGridListModule,
     MatIconModule,
     MatInputModule,
+    MatPaginatorModule,
     ReactiveFormsModule,
     RouterModule,
   ],
@@ -41,6 +43,7 @@ import { FilterContainerComponent } from './components/filter-container/filter-c
     MatGridListModule,
     MatIconModule,
     MatInputModule,
+    MatPaginatorModule,
     ReactiveFormsModule,
     SearchBarComponent,
   ],
