@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import {
   Event,
   NavigationCancel,
@@ -12,6 +12,7 @@ import {
   selector: 'app-routing-loading-bar',
   templateUrl: './routing-loading-bar.component.html',
   styleUrls: ['./routing-loading-bar.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RoutingLoadingBarComponent implements OnInit {
   loading = false;
