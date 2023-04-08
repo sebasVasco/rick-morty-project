@@ -10,7 +10,7 @@ export interface CharacterSchema {
   image: string;
   episode: any[];
   url: string;
-  create: string | Date;
+  created: string | Date;
 }
 
 interface OriginLocationSchema {

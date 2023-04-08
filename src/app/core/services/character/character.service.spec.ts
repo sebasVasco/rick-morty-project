@@ -3,6 +3,7 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 import { HttpClient } from '@angular/common/http';
 
 import { CharacterService } from './character.service';
+import { CharacterFilters } from '@app/features/character/components/character-filter/character-filter.model';
 
 describe('CharacterService', () => {
   let service: CharacterService;
@@ -36,10 +37,10 @@ describe('CharacterService', () => {
   });
 
   it('should get characters with filters', () => {
-    const filters = {
+    const filters: CharacterFilters = {
       name: 'test',
-      status: 'test',
-      gender: 'test',
+      status: 'alive',
+      gender: 'female',
     };
     service.getCharacters(1, filters).subscribe((res) => {
       expect(res).toBeTruthy();
@@ -47,7 +48,7 @@ describe('CharacterService', () => {
 
     const req = httpTestingController.expectOne({
       method: 'GET',
-      url: 'character/?page=1&name=test&status=test&gender=test',
+      url: 'character/?page=1&name=test&status=alive&gender=female',
     });
 
     req.flush({});
